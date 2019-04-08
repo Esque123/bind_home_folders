@@ -9,3 +9,4 @@ mount --bind /mnt/Storage/Downloads /home/kevin/Downloads
 mount --bind /mnt/Storage/Music /home/kevin/Music
 mount --bind /mnt/Storage/Pictures /home/kevin/Pictures
 mount --bind /mnt/Storage/Videos /home/kevin/Videos
+mount --bind /mnt/Storage/Dropbox /home/kevin/Dropbox
