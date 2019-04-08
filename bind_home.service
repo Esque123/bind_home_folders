@@ -1,0 +1,18 @@
+#Bind the folders in Home to a specific location at startup
+#Place in /etc/systemd/system/
+#Kevin Mostert
+#08/04/2019
+
+[Unit]
+#Instructs systemd on when the script should be run
+After=NetworkManager.service
+
+[Service]
+#This allows it to run as root
+User=root
+#The path to the script to be executed
+ExecStart=/home/"$USER"/bin/bind_home_folders.sh
+
+[Install]
+#Into what boot target the systemd unit should be installed
+WantedBy=default.target
