@@ -11,7 +11,7 @@ After=NetworkManager.service
 #This allows it to run as root
 User=root
 #The path to the script to be executed
-ExecStart=/home/kevin/bin/bind_home_folders.sh
+ExecStart=/usr/local/bin/bind_home_folders.sh
 
 [Install]
 #Into what boot target the systemd unit should be installed

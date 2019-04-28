@@ -4,11 +4,23 @@
 #08/04/2019
 #Place this in /usr/local/bin/ or /home/yourusername/bin
 
-sleep 15s
-mount --bind /mnt/Storage/Documents /home/kevin/Documents
-mount --bind /mnt/Storage/Downloads /home/kevin/Downloads
-mount --bind /mnt/Storage/Music /home/kevin/Music
-mount --bind /mnt/Storage/Pictures /home/kevin/Pictures
-mount --bind /mnt/Storage/Videos /home/kevin/Videos
-mount --bind /mnt/Storage/Dropbox /home/kevin/Dropbox
-mount --bind /mnt/Storage/Games /home/kevin/Games
+function realuser {
+
+	if [ "$USER" == "root" ]
+	then
+		myname="$SUDO_USER"
+	elif [ "$USER" != "root" ]
+	then
+		myname="$USER"
+	fi
+}
+
+realuser
+sleep 20s
+mount --bind /mnt/Storage/Documents /home/"$myname"/Documents
+mount --bind /mnt/Storage/Downloads /home/"$myname"/Downloads
+mount --bind /mnt/Storage/Music /home/"$myname"/Music
+mount --bind /mnt/Storage/Pictures /home/"$myname"/Pictures
+mount --bind /mnt/Storage/Videos /home/"$myname"/Videos
+mount --bind /mnt/Storage/Dropbox /home/"$myname"/Dropbox
+mount --bind /mnt/Storage/Games /home/"$myname"/Games
