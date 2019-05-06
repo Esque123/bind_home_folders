@@ -2,21 +2,12 @@
 #A script to bind my Home directories to an external partition/device mounted at /mnt/Storage/
 #Kevin Mostert
 #08/04/2019
-#Place this in /usr/local/bin/ or /home/yourusername/bin
+#Place this in /usr/local/bin/ or /home/yourusername/bin/
 
-function realuser {
+sleep 5s
 
-	if [ "$USER" == "root" ]
-	then
-		myname="$SUDO_USER"
-	elif [ "$USER" != "root" ]
-	then
-		myname="$USER"
-	fi
-}
+myname=kevin
 
-realuser
-sleep 20s
 mount --bind /mnt/Storage/Documents /home/"$myname"/Documents
 mount --bind /mnt/Storage/Downloads /home/"$myname"/Downloads
 mount --bind /mnt/Storage/Music /home/"$myname"/Music

@@ -5,7 +5,7 @@
 
 [Unit]
 #Instructs systemd on when the script should be run
-After=NetworkManager.service
+#After=NetworkManager.service
 
 [Service]
 #This allows it to run as root
